@@ -32,6 +32,6 @@ jobs:
     # Deploy sample image to the GKE cluster
     - name: Deploy
       run: |-
-        kubectl apply -f deployment.yml
-        kubectl rollout status deployment/$DEPLOYMENT_NAME
-        kubectl get services -o wide
+        kubectl get pods
+        kubectl delete -f deployment.yml
+        kubectl get pods
